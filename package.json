@@ -17,8 +17,11 @@
     "url": "https://github.com/zackmore/train/issues"
   },
   "homepage": "https://github.com/zackmore/train#readme",
-  "engines": { "node" : ">=8.0.0" },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
+    "dotenv": "^4.0.0",
     "joi": "^10.6.0",
     "jsonwebtoken": "^7.4.3",
     "knex": "^0.13.0",

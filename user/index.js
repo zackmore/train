@@ -12,7 +12,7 @@ async function signin (ctx, next) {
     if (utils.sha256Encode(body.password) === user.password) {
       let userData = _.cloneDeep(user)
       delete userData.password
-      const token = jsonwebtoken.sign(userData, 'haha', { expiresIn: '7d' })
+      const token = jsonwebtoken.sign(userData, process.env.SECRET, { expiresIn: '7d' })
       ctx.body = {
         token
       }
@@ -43,7 +43,7 @@ async function signup (ctx, next) {
       const thisUser = await Q.user.findUserByName(body.username)
       let thisUserData = _.cloneDeep(thisUser)
       delete thisUserData.password
-      const token = jsonwebtoken.sign(thisUserData, 'haha', { expiresIn: '7d' })
+      const token = jsonwebtoken.sign(thisUserData, process.env.SECRET, { expiresIn: '7d' })
 
       ctx.body = {
         token

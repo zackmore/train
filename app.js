@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import Koa from 'koa'
 import json from 'koa-json'
 import onerror from 'koa-onerror'
@@ -13,7 +15,7 @@ import router from './routes'
 const app = new Koa()
 onerror(app)
 
-app.use(jwt({ secret: 'haha' }).unless({ path: ['/signin', '/signup'] }))
+app.use(jwt({ secret: process.env.SECRET }).unless({ path: ['/signin', '/signup'] }))
   .use(json())
   .use(logger())
   .use(bodyParser())
