@@ -82,3 +82,4 @@ $RECYCLE.BIN/
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 *swp
+db/*sqlite3
