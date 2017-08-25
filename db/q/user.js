@@ -8,6 +8,14 @@ function findUserByName (username) {
 }
 
 
+function addUser (user) {
+  return knex('users')
+          .insert(user)
+          .returning('*')
+}
+
+
 export default {
-  findUserByName
+  findUserByName,
+  addUser
 }

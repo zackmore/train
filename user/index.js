@@ -26,9 +26,26 @@ async function signin (ctx, next) {
 
 
 async function signup (ctx, next) {
-  try {
-  } catch (err) {
-    ctx.throw(500, 'server error')
+  let body = _.cloneDeep(ctx.request.body)
+  const user = await Q.user.findUserByName(body.username)
+
+  if (_.isEmpty(user)) {
+    if (body.password != body.passwordRepeat) ctx.throw(403, 'unmatch passwords')
+
+    let userData = {
+      username: body.username,
+      password: utils.sha256Encode(body.password)
+    }
+
+    const result = await Q.user.addUser(userData)
+    if (!_.isEmpty(result)) {
+      const token = jsonwebtoken.sign(userData, 'haha', { expiresIn: '7d' })
+      ctx.body = {
+        token
+      }
+    }
+  } else {
+    ctx.throw(403, 'username already taken')
   }
 }
 
