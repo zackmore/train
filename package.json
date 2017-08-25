@@ -1,0 +1,39 @@
+{
+  "name": "train",
+  "version": "1.0.0",
+  "description": "A Koa Demo.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/babel-node app.js",
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zackmore/train.git"
+  },
+  "author": "zackmore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zackmore/train/issues"
+  },
+  "homepage": "https://github.com/zackmore/train#readme",
+  "dependencies": {
+    "joi": "^10.6.0",
+    "jsonwebtoken": "^7.4.3",
+    "knex": "^0.13.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^3.2.2",
+    "koa-logger": "^3.0.1",
+    "koa-onerror": "^3.1.0",
+    "koa-router": "^7.2.1",
+    "koa-unless": "^1.0.7",
+    "lodash": "^4.17.4",
+    "sqlite3": "^3.1.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
+  }
+}
