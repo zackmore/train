@@ -4,7 +4,7 @@
   "description": "A Koa Demo.",
   "main": "app.js",
   "scripts": {
-    "dev": "./node_modules/.bin/babel-node app.js",
+    "dev": "node app.js",
     "test": "npm run test"
   },
   "repository": {
@@ -36,8 +36,5 @@
     "lodash": "^4.17.4",
     "sqlite3": "^3.1.9"
   },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0"
-  }
+  "devDependencies": {}
 }
