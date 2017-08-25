@@ -18,6 +18,7 @@ exports.up = function(knex, Promise) {
       table.integer('training_id').unsigned()
       table.foreign('user_id').references('users.id')
       table.foreign('training_id').references('trainings.id')
+      table.timestamps(true, true)
     })
   ])
 }

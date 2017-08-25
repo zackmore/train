@@ -6,9 +6,17 @@ async function showAll (ctx, next) {
   let userid = ctx.state.user.id
 
   const records = await Q.record.findAllRecords(userid)
+  const resData = records.map(r => {
+    return {
+      id: r.id,
+      trainingName: r.name,
+      date: r.created_at,
+      meter: r.meter
+    }
+  })
 
   ctx.body = {
-    data: records
+    data: resData
   }
 }
 
