@@ -1,6 +1,3 @@
-require('dotenv').config()
-
-
 const Koa = require('koa')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
