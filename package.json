@@ -4,8 +4,8 @@
   "description": "A Koa Demo.",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
-    "test": "npm run test"
+    "init": "./node_modules/.bin/knex migrate:latest && ./node_modules/.bin/knex seed:run",
+    "dev": "node index.js"
   },
   "repository": {
     "type": "git",

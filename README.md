@@ -1,4 +1,5 @@
 # A Koa Demo
 
-`./node_modules/.bin/knex migrate:latest --env development`
-`./node_modules/.bin/knex seed:run --env development`
+- `npm install`
+- `npm run init`
+- `npm run dev`
