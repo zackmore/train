@@ -6,16 +6,18 @@ import bodyParser from 'koa-bodyparser'
 import jwt from 'koa-jwt'
 import unless from 'koa-unless'
 
+import middlewarePostValidator from './middleware/post-json-validator'
 import router from './routes'
 
 
 const app = new Koa()
 onerror(app)
 
-app.use(jwt({ secret: '' }).unless({ path: [] }))
+app.use(jwt({ secret: '' }).unless({ path: ['/signin', '/signup'] }))
   .use(json())
   .use(logger())
   .use(bodyParser())
+  .use(middlewarePostValidator())
   .use(router.routes())
 
 
