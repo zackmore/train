@@ -1,4 +1,4 @@
-import knex from '../connection'
+const knex = require('../connection')
 
 
 function findAllTrainings () {
@@ -7,6 +7,6 @@ function findAllTrainings () {
 }
 
 
-export default {
+module.exports = {
   findAllTrainings
 }

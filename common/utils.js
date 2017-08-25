@@ -1,8 +1,12 @@
-import crypto from 'crypto'
+const crypto = require('crypto')
 
 
-export function sha256Encode (str) {
+function sha256Encode (str) {
   return crypto.createHmac('sha256', process.env.SECRET)
                 .update(str)
                 .digest('hex')
+}
+
+module.exports = {
+  sha256Encode
 }

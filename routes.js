@@ -1,7 +1,7 @@
-import Router from 'koa-router'
-import user from './user'
-import training from './training'
-import record from './record'
+const Router = require('koa-router')
+const user = require('./user')
+const training = require('./training')
+const record = require('./record')
 
 const router = new Router()
 
@@ -11,4 +11,4 @@ router.get('/trainings', training.showAll)
 router.get('/records', record.showAll)
 router.post('/records', record.newRecord)
 
-export default router
+module.exports = router

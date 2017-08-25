@@ -1,8 +1,8 @@
-import user from './user'
-import training from './training'
-import record from './record'
+const user = require('./user')
+const training = require('./training')
+const record = require('./record')
 
-export default {
+module.exports = {
   user,
   training,
   record

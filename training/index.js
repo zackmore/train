@@ -1,4 +1,4 @@
-import Q from '../db/q'
+const Q = require('../db/q')
 
 
 async function showAll (ctx, next) {
@@ -10,6 +10,6 @@ async function showAll (ctx, next) {
 }
 
 
-export default {
+module.exports = {
   showAll
 }

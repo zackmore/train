@@ -1,5 +1,5 @@
-import _ from 'lodash'
-import Joi from 'joi'
+const _ = require('lodash')
+const Joi = require('joi')
 
 
 async function validateSignIn (ctx, next) {
@@ -52,7 +52,7 @@ async function validateNewRecord (ctx, next) {
 }
 
 
-export default function () {
+module.exports = function () {
   return async function (ctx, next) {
     if (_.startsWith('/signin', ctx.url) && ctx.method === 'POST') {
       await validateSignIn(ctx, next)

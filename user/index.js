@@ -1,7 +1,7 @@
-import _ from 'lodash'
-import jsonwebtoken from 'jsonwebtoken'
-import Q from '../db/q'
-import * as utils from '../common/utils'
+const _ = require('lodash')
+const jsonwebtoken = require('jsonwebtoken')
+const Q = require('../db/q')
+const utils = require('../common/utils')
 
 
 async function signin (ctx, next) {
@@ -55,7 +55,7 @@ async function signup (ctx, next) {
 }
 
 
-export default {
+module.exports = {
   signin,
   signup
 }

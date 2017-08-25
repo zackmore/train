@@ -1,5 +1,5 @@
-import _ from 'lodash'
-import Q from '../db/q'
+const _ = require('lodash')
+const Q = require('../db/q')
 
 
 async function showAll (ctx, next) {
@@ -37,7 +37,7 @@ async function newRecord (ctx, next) {
 }
 
 
-export default {
+module.exports = {
   showAll,
   newRecord
 }

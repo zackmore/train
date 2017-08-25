@@ -1,16 +1,15 @@
 require('dotenv').config()
 
-import Koa from 'koa'
-import json from 'koa-json'
-import onerror from 'koa-onerror'
-import logger from 'koa-logger'
-import bodyParser from 'koa-bodyparser'
-import jwt from 'koa-jwt'
-import unless from 'koa-unless'
+const Koa = require('koa')
+const json = require('koa-json')
+const onerror = require('koa-onerror')
+const logger = require('koa-logger')
+const bodyParser = require('koa-bodyparser')
+const jwt = require('koa-jwt')
+const unless = require('koa-unless')
 
-import middlewarePostValidator from './middleware/post-json-validator'
-import router from './routes'
-
+const middlewarePostValidator = require('./middleware/post-json-validator')
+const router = require('./routes')
 
 const app = new Koa()
 onerror(app)

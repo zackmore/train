@@ -1,4 +1,4 @@
-import knex from '../connection'
+const knex = require('../connection')
 
 
 function findAllRecords (userid) {
@@ -18,7 +18,7 @@ function addRecord (record) {
 }
 
 
-export default {
+module.exports = {
   findAllRecords,
   addRecord
 }
