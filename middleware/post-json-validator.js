@@ -37,7 +37,12 @@ async function validateSignUp (ctx, next) {
 
 export default function () {
   return async function (ctx, next) {
-    if (_.startsWith('/signin', ctx.url) && ctx.method === 'POST') await validateSignIn(ctx, next)
-    if (_.startsWith('/signup', ctx.url) && ctx.method === 'POST') await validateSignUp(ctx, next)
+    if (_.startsWith('/signin', ctx.url) && ctx.method === 'POST') {
+      await validateSignIn(ctx, next)
+    } else if (_.startsWith('/signup', ctx.url) && ctx.method === 'POST') {
+      await validateSignUp(ctx, next)
+    } else {
+      await next()
+    }
   }
 }
