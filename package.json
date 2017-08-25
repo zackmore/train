@@ -2,9 +2,9 @@
   "name": "train",
   "version": "1.0.0",
   "description": "A Koa Demo.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "node app.js",
+    "dev": "node index.js",
     "test": "npm run test"
   },
   "repository": {

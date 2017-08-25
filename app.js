@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+
 const Koa = require('koa')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
@@ -14,7 +15,7 @@ const router = require('./routes')
 const app = new Koa()
 onerror(app)
 
-app.use(jwt({ secret: process.env.SECRET }).unless({ path: ['/signin', '/signup'] }))
+app.use(jwt({ secret: process.env.SECRET }).unless({ path: ['/', '/signin', '/signup'] }))
   .use(json())
   .use(logger())
   .use(bodyParser())
@@ -22,5 +23,4 @@ app.use(jwt({ secret: process.env.SECRET }).unless({ path: ['/signin', '/signup'
   .use(router.routes())
 
 
-app.listen(3000)
-console.log('Server is starting at port 3000')
+module.exports = app
