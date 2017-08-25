@@ -38,8 +38,13 @@ async function signup (ctx, next) {
     }
 
     const result = await Q.user.addUser(userData)
+
     if (!_.isEmpty(result)) {
-      const token = jsonwebtoken.sign(userData, 'haha', { expiresIn: '7d' })
+      const thisUser = await Q.user.findUserByName(body.username)
+      let thisUserData = _.cloneDeep(thisUser)
+      delete thisUserData.password
+      const token = jsonwebtoken.sign(thisUserData, 'haha', { expiresIn: '7d' })
+
       ctx.body = {
         token
       }

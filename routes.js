@@ -9,5 +9,6 @@ router.post('/signin', user.signin)
 router.post('/signup', user.signup)
 router.get('/trainings', training.showAll)
 router.get('/records', record.showAll)
+router.post('/records', record.newRecord)
 
 export default router

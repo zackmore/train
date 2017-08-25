@@ -11,6 +11,14 @@ function findAllRecords (userid) {
 }
 
 
+function addRecord (record) {
+  return knex('records')
+          .insert(record)
+          .returning('*')
+}
+
+
 export default {
-  findAllRecords
+  findAllRecords,
+  addRecord
 }
